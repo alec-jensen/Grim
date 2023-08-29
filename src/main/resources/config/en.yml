@@ -7,6 +7,8 @@
 alerts:
   # In addition to broadcasting alerts to players, should they also be sent to the console?
   print-to-console: true
+  # Should we send alerts about players likely spoofing their brand?
+  alert-brand-spoof: true
   # This controls whether/how alerts are shared between servers connected to your proxy.
   # You must have 'bungee-plugin-message-channel' enabled in your Velocity's configuration if Velocity is in use.
   proxy:

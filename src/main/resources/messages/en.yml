@@ -3,6 +3,7 @@ prefix: "&bGrim &8\u00BB"
 
 alerts-enabled: "%prefix% &fAlerts enabled"
 alerts-disabled: "%prefix% &fAlerts disabled"
+brand-spoof-alert: "%prefix% &f%player% &7is likely spoofing their brand (claimed %brand_raw%)"
 client-brand-format: "%prefix% &f%player% joined using %brand%"
 console-specify-target: "%prefix% &cYou must specify a target as the console!"
 player-not-found: "%prefix% &cPlayer is exempt or offline!"

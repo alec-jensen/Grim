@@ -11,6 +11,7 @@ import ac.grim.grimac.checks.impl.crash.*;
 import ac.grim.grimac.checks.impl.exploit.ExploitA;
 import ac.grim.grimac.checks.impl.exploit.ExploitB;
 import ac.grim.grimac.checks.impl.groundspoof.NoFallA;
+import ac.grim.grimac.checks.impl.misc.BrandSpoof;
 import ac.grim.grimac.checks.impl.misc.ClientBrand;
 import ac.grim.grimac.checks.impl.misc.FastBreak;
 import ac.grim.grimac.checks.impl.movement.*;
@@ -62,6 +63,7 @@ public class CheckManager {
                 .put(PacketPlayerAbilities.class, new PacketPlayerAbilities(player))
                 .put(PacketWorldBorder.class, new PacketWorldBorder(player))
                 .put(ClientBrand.class, new ClientBrand(player))
+                .put(BrandSpoof.class, new BrandSpoof(player))
                 .put(NoFallA.class, new NoFallA(player))
                 .put(BadPacketsO.class, new BadPacketsO(player))
                 .put(BadPacketsA.class, new BadPacketsA(player))
