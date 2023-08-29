@@ -102,7 +102,7 @@ public class GrimExternalAPI implements GrimAbstractAPI, Initable {
         variableReplacements.put("%player%", GrimUser::getName);
         variableReplacements.put("%uuid%", user -> user.getUniqueId().toString());
         variableReplacements.put("%ping%", user -> user.getTransactionPing() + "");
-        variableReplacements.put("%brand%", GrimUser::getBrand);
+        variableReplacements.put("%brand%", user -> user.getBrand() + (user.isLikelySpoofingBrand() ? " (likely spoofed)" : ""));
         variableReplacements.put("%h_sensitivity%", user -> ((int) Math.round(user.getHorizontalSensitivity() * 200)) + "");
         variableReplacements.put("%v_sensitivity%", user -> ((int) Math.round(user.getVerticalSensitivity() * 200)) + "");
         variableReplacements.put("%fast_math%", user -> !user.isVanillaMath() + "");

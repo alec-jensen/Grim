@@ -673,4 +673,10 @@ public class GrimPlayer implements GrimUser {
         return checkManager.allChecks.values();
     }
 
+    // TODO: Expand this to include more checks
+    public boolean isLikelySpoofingBrand() {
+        if (!this.getBrand().equals("vanilla")) { return false; }
+
+        return !this.isVanillaMath();
+    }
 }
