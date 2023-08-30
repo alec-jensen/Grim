@@ -680,7 +680,7 @@ public class GrimPlayer implements GrimUser {
         final String brand = this.getBrand();
         final String lunarClientRegex = "^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$";
 
-        return ((brand.equals("vanilla") || brand.matches(lunarClientRegex)) && !this.isVanillaMath()) || // Certain clients don't have fast math
-                (brand.matches("lunarclient") && !brand.matches(lunarClientRegex)); // Some clients spoof lunar incorrectly
+        return (brand.equals("vanilla") && !this.isVanillaMath()) || // Vanilla doesn't have fast math
+                (brand.matches(".*lunarclient.*") && !brand.matches(lunarClientRegex)); // Some clients spoof lunar incorrectly
     }
 }
