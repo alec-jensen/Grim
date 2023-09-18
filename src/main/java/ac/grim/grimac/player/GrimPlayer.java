@@ -50,8 +50,6 @@ import java.util.*;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 // Everything in this class should be sync'd to the anticheat thread.
 // Put variables sync'd to the netty thread in PacketStateData
@@ -683,10 +681,8 @@ public class GrimPlayer implements GrimUser {
 
     // TODO: Expand this to include more checks
     public boolean isLikelySpoofingBrand() {
-        final String brand = this.getBrand();
-        final String lunarClientRegex = "^lunarclient:v\\d+\\.\\d+\\.\\d+-\\d{4}$";
+        if (!this.getBrand().equals("vanilla")) { return false; }
 
-        return ((brand.equals("vanilla") || brand.matches(lunarClientRegex)) && !this.isVanillaMath()) || // Certain clients don't have fast math
-                (brand.matches("lunarclient") && !brand.matches(lunarClientRegex)); // Some clients spoof lunar incorrectly
+        return !this.isVanillaMath();
     }
 }
