@@ -17,7 +17,6 @@ public class BrandSpoof extends Check implements PacketCheck {
     @Override
     public void onPacketReceive(final PacketReceiveEvent event) {
         if (this.alerted) return;
-
         if (GrimAPI.INSTANCE.getConfigManager().getConfig().getBooleanElse("alert-brand-spoof", true)) {
             if (this.player.isLikelySpoofingBrand()) {
                 String message = GrimAPI.INSTANCE.getConfigManager().getConfig().getStringElse("brand-spoof-alert", "%prefix% &f%player% &7is likely spoofing their brand (claimed %brand_raw%)");
